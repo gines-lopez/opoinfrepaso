@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://gines-lopez.github.io/opoinfrepaso/</loc>
-         <lastmod>2025-02-24</lastmod>
+         <loc>https://gines-lopez.github.io/opoinfrepaso/index.html</loc>
+         <lastmod>2025-02-25</lastmod>
+    </url>
+    <url>
+         <loc>https://gines-lopez.github.io/opoinfrepaso/includes/abbreviations.html</loc>
+         <lastmod>2025-02-25</lastmod>
+    </url>
+    <url>
+         <loc>https://gines-lopez.github.io/opoinfrepaso/redes/conceptosbasicos.html</loc>
+         <lastmod>2025-02-25</lastmod>
+    </url>
+    <url>
+         <loc>https://gines-lopez.github.io/opoinfrepaso/redes/indice.html</loc>
+         <lastmod>2025-02-25</lastmod>
     </url>
 </urlset>
