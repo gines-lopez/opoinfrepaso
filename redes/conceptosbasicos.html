@@ -334,6 +334,18 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Conceptos básicos de redes y direccionamiento IP
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="conceptosbasicos.html" class="md-nav__link md-nav__link--active">
         
   
@@ -344,6 +356,76 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#arquitectura-de-comunicaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arquitectura de comunicaciones
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelo-referencia-osi-y-arquitectura-tcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modelo referencia OSI y arquitectura TCP/IP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-capa-de-red" class="md-nav__link">
+    <span class="md-ellipsis">
+      La capa de red
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="La capa de red">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cuantas-direcciones-ip-existen" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Cuántas direcciones IP existen?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direcciones-ip-especiales-y-reservadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Direcciones IP especiales y reservadas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -374,6 +456,175 @@
 
 
 <h1 id="conceptos-basicos-de-redes-y-direccionamiento-ip">Conceptos básicos de redes y direccionamiento IP<a class="headerlink" href="#conceptos-basicos-de-redes-y-direccionamiento-ip" title="Permanent link">&para;</a></h1>
+<h2 id="arquitectura-de-comunicaciones">Arquitectura de comunicaciones<a class="headerlink" href="#arquitectura-de-comunicaciones" title="Permanent link">&para;</a></h2>
+<p>La <strong>arquitectura de una red</strong> viene definida por tres características fundamentales, que dependen de la tecnología que se utilice en su construcción:</p>
+<ul>
+<li><strong>Topología</strong>: la topología de una red es la organización de su cableado, ya que define la configuración básica de la interconexión de estaciones y, en algunos casos, el camino de una transmisión de datos sobre el cable.</li>
+<li><strong>Método de acceso a la red</strong>: todas las redes que poseen un medio compartido para transmitir la información, necesitan ponerse de acuerdo a la hora de enviar información, ya que no pueden hacerlo a la vez. En este caso, si dos estaciones transmiten a la vez en la misma frecuencia, la señal recogida en los receptores será una mezcla de las dos. Para las redes que no posean un medio compartido, el método de acceso al cable es trivial y no es necesario llevar a cabo ningún control para transmitir.</li>
+<li><strong>Protocolos de comunicaciones</strong>: son las reglas y procedimientos utilizados en una red para realizar la comunicación. Esas reglas tienen en cuenta el método utilizado para corregir errores, establecer una comunicación, etc.</li>
+</ul>
+<h2 id="modelo-referencia-osi-y-arquitectura-tcpip">Modelo referencia OSI  y arquitectura TCP/IP<a class="headerlink" href="#modelo-referencia-osi-y-arquitectura-tcpip" title="Permanent link">&para;</a></h2>
+<figure>
+  <a class="glightbox" href="../img/redes/redes-000.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="OSI vs TCP/IP" src="../img/redes/redes-000.webp" width="500" /></a>
+  <figcaption>OSI vs TCP/IP</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Correspondencia</p>
+<p>En realidad la arquitectura TCP/IP es una arquitectura de 4 capas:</p>
+<ul>
+<li>4 Aplicación (capas 5,6 y 7 de OSI)</li>
+<li>3 Transporte (capa 4 de OSI)</li>
+<li>2 Internet (capa 3 de OSI)</li>
+<li>1 Acceso a la red (capas 1 y 2 de OSI)</li>
+</ul>
+</div>
+<h2 id="la-capa-de-red">La capa de red<a class="headerlink" href="#la-capa-de-red" title="Permanent link">&para;</a></h2>
+<p>La dirección IP es el identificador de cada host dentro de su red de redes. Cada host conectado a una red tiene una dirección IP asignada, la cual debe ser distinta a todas las demás direcciones que estén vigentes en ese momento en el conjunto de redes visibles por el host. En el caso de Internet, no puede haber dos ordenadores con 2 direcciones IP (públicas) iguales. Pero sí podríamos tener dos ordenadores con la misma dirección IP siempre y cuando pertenezcan a redes independientes entre sí (sin ningún camino posible que las comunique).</p>
+<p>Las direcciones IP se clasifican en:</p>
+<ul>
+<li>Direcciones IP públicas. Son visibles en todo Internet. Un ordenador con una IP pública es accesible (visible) desde cualquier otro ordenador conectado a Internet. Para conectarse a Internet es necesario tener una dirección IP pública.</li>
+<li>Direcciones IP privadas (reservadas). Son visibles únicamente por otros hosts de su propia red o de otras redes privadas interconectadas por routers. Se utilizan en las empresas para los puestos de trabajo. Los ordenadores con direcciones IP privadas pueden salir a Internet por medio de un router (o proxy) que tenga una IP pública. Sin embargo, desde Internet no se puede acceder a ordenadores con direcciones IP privadas.</li>
+</ul>
+<p>A su vez, las direcciones IP pueden ser:</p>
+<ul>
+<li>Direcciones IP estáticas (fijas). Un host que se conecte a la red con dirección IP estática siempre lo hará con una misma IP. Las direcciones IP públicas estáticas son las que utilizan los servidores de Internet con objeto de que estén siempre localizables por los usuarios de Internet. Estas direcciones hay que contratarlas.</li>
+<li>Direcciones IP dinámicas. Un host que se conecte a la red mediante dirección IP dinámica, cada vez lo hará con una dirección IP distinta. Las direcciones IP públicas dinámicas son las que se utilizan en las conexiones a Internet mediante un módem. Los proveedores de Internet utilizan direcciones IP dinámicas debido a que tienen más clientes que direcciones IP (es muy improbable que todos se conecten a la vez).</li>
+</ul>
+<p>Las direcciones IP están formadas por 4 bytes (32 bits). Se suelen representar de la forma a.b.c.d donde cada una de estas letras es un número comprendido entre el 0 y el 255. Por ejemplo la dirección IP del servidor de IBM (www.ibm.com) es 129.42.18.99.</p>
+<p>Las direcciones IP se pueden representar</p>
+<ul>
+<li>en decimal (lo habitual), desde 0.0.0.0 hasta 255.255.255.255</li>
+<li>en hexadecimal, desde 00.00.00.00 hasta FF.FF.FF.FF</li>
+<li>en binario, desde 00000000.00000000.00000000.00000000 hasta 11111111.11111111.11111111.11111111</li>
+</ul>
+<figure>
+  <a class="glightbox" href="../img/redes/redes-001.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Reparto direcciones IP" src="../img/redes/redes-001.webp" width="500" /></a>
+  <figcaption>Reparto direcciones IP</figcaption>
+</figure>
+<p>Existen un total de 332 direcciones IP (4.294.967.296).</p>
+<ul>
+<li>La mitad (2.147.483.648) están destinadas a redes de clase A: (16.777.216 IPs por cada una de las 128 redes de clase A).</li>
+<li>Un cuarto (1.073.741.824) están destinadas a redes de clase B: (65.536 IPs por cada una de las 16.384 redes de clase B).</li>
+<li>Un octavo (536.870.912) están destinadas a redes de clase C: (256 IPs por cada una de las 2.097.152 redes de clase C)</li>
+<li>Un dieciseisavo (268.435.456) están destinadas la clase D (Multicast).</li>
+<li>Otro dieciseisavo (268.435.456) están destinadas a la clase E (Experimental).</li>
+</ul>
+<h3 id="cuantas-direcciones-ip-existen">¿Cuántas direcciones IP existen?<a class="headerlink" href="#cuantas-direcciones-ip-existen" title="Permanent link">&para;</a></h3>
+<p>Si calculamos 2 elevado a 32 obtenemos más de 4000 millones de direcciones distintas. Sin embargo, no todas las direcciones son válidas para asignarlas a hosts. Las direcciones IP no se encuentran aisladas en Internet, sino que pertenecen siempre a alguna red. Todas las máquinas conectadas a una misma red se caracterizan en que los primeros bits de sus direcciones son iguales. De esta forma, las direcciones se dividen conceptualmente en dos partes:</p>
+<ul>
+<li>el identificador de red</li>
+<li>el identificador de host.</li>
+</ul>
+<p>Dependiendo del número de hosts que se necesiten para cada red, las direcciones de Internet se han dividido en las clases primarias A, B y C. La clase D está formada por direcciones que identifican no a un host, sino a un grupo de ellos. Las direcciones de clase E no se pueden utilizar (están reservadas).</p>
+<figure>
+  <a class="glightbox" href="../img/redes/redes-002.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Direcciones IP" src="../img/redes/redes-002.webp" width="500" /></a>
+  <figcaption>Direcciones IP</figcaption>
+</figure>
+<table>
+<thead>
+<tr>
+<th>Clase</th>
+<th>Formato(r=red, h=host)</th>
+<th>Nº de redes</th>
+<th>Nº de hosts por red</th>
+<th>Rango de direcciones de redes</th>
+<th>Máscara de subred</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>r.h.h.h</td>
+<td>128</td>
+<td>16.777.214</td>
+<td>0.0.0.0 - 127.0.0.0</td>
+<td>255.0.0.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>r.r.h.h</td>
+<td>16.384</td>
+<td>65.534</td>
+<td>128.0.0.0 - 191.255.0.0</td>
+<td>255.255.0.0</td>
+</tr>
+<tr>
+<td>C</td>
+<td>r.r.r.h</td>
+<td>2.097.152</td>
+<td>254</td>
+<td>192.0.0.0 - 223.255.255.0</td>
+<td>255.255.255.0</td>
+</tr>
+<tr>
+<td>D</td>
+<td>grupo</td>
+<td></td>
+<td></td>
+<td>224.0.0.0 - 239.255.255.255</td>
+<td></td>
+</tr>
+<tr>
+<td>E</td>
+<td>no válidas</td>
+<td></td>
+<td></td>
+<td>240.0.0.0 - 255.255.255.255</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition nota">
+<p class="admonition-title">Difusión (broadcast) y multidifusión (multicast)</p>
+<p>El término difusión (broadcast) se refiere a todos los hosts de una red; multidifusión (multicast) se refiere a varios hosts (aquellos que se hayan suscrito dentro de un mismo grupo). Siguiendo esta misma terminología, en ocasiones se utiliza el término unidifusión para referirse a un único host.</p>
+</div>
+<h3 id="direcciones-ip-especiales-y-reservadas">Direcciones IP especiales y reservadas<a class="headerlink" href="#direcciones-ip-especiales-y-reservadas" title="Permanent link">&para;</a></h3>
+<p>No todas las direcciones comprendidas entre la 0.0.0.0 y la 223.255.255.255 son válidas para un host: algunas de ellas tienen significados especiales. Las principales direcciones especiales se resumen en la siguiente tabla. Su interpretación depende del host desde el que se utilicen.</p>
+<figure>
+  <a class="glightbox" href="../img/redes/redes-003.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="IP reservadas" src="../img/redes/redes-003.webp" width="500" /></a>
+  <figcaption>IP reservadas</figcaption>
+</figure>
+<div class="admonition info">
+<p class="admonition-title">Observaciones</p>
+<ul>
+<li>La red 0 y la red 127 (ambas de clase A) son especiales. Perdemos nada menos que 2*16.777.216 IPs que no pueden asignarse a ningún host concreto.</li>
+<li>En cada red existen 2 direcciones especiales: la primera del rango (dirección de red) y la última del rango (dirección de broadcast). Por tanto si tenemos la red 192.168.0.x con 256 IPs, sólo pueden destinarse a hosts 254 direcciones (192.168.0.0 es la dirección de red y 192.168.0.255 es la dirección de broadcast)</li>
+</ul>
+</div>
+<p><strong>Difusión</strong> o <strong>broadcasting</strong> es el envío de un mensaje a todos los ordenadores que se encuentran en una red. La dirección de loopback (normalmente 127.0.0.1) se utiliza para comprobar que los protocolos TCP/IP están correctamente instalados en nuestro propio ordenador. </p>
+<p>Las direcciones de redes siguientes se encuentran reservadas para su uso en redes privadas (intranets). Una dirección IP que pertenezca a una de estas redes se dice que es una dirección IP privada.</p>
+<table>
+<thead>
+<tr>
+<th>Clase</th>
+<th>Rango de direcciones privadas de redes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>10.0.0.0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>172.16.0.0 - 172.31.0.0</td>
+</tr>
+<tr>
+<td>C</td>
+<td>192.168.0.0 - 192.168.255.0</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition example">
+<p class="admonition-title">Caso práctico</p>
+<p><a class="glightbox" href="../img/redes/redes-004.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="Caso de uso" src="../img/redes/redes-004.webp" width="300" /></a></p>
+<p>Una empresa dispone de una línea frame relay con direcciones públicas contratadas desde la 194.143.17.8 hasta la 194.143.17.15 (la dirección de la red es 194.143.17.8, su dirección de broadcasting 194.143.17.15 y su máscara de red 255.255.255.248). La línea frame relay está conectada a un router. Diseñar la red para:</p>
+<p>3 servidores (de correo, web y proxy)
+20 puestos de trabajo
+Los 20 puestos de trabajo utilizan direcciones IP privadas y salen a Internet a través del Proxy. En la configuración de red de cada uno de estos 20 ordenadores se indicará la dirección «192.168.1.1» en el cuadro «Puerta de enlace». La puerta de enlace (puerta de salida o gateway) es el ordenador de nuestra red que nos permite salir a otras redes. El Proxy tiene dos direcciones IP, una de la red privada y otra de la red pública. Su misión es dar salida a Internet a la red privada, pero no permitir los accesos desde el exterior a la zona privada de la empresa.</p>
+<p>Los 3 servidores y el router utilizan direcciones IP públicas, para que sean accesibles desde cualquier host de Internet. La puerta de enlace de Proxy, Correo y Web es 194.143.17.9 (Router).</p>
+<p>Obsérvese que la primera y última dirección de todas las redes son direcciones IP especiales que no se pueden utilizar para asignarlas a hosts. La primera es la dirección de la red y la última, la dirección de difusión o broadcasting. La máscara de subred de cada ordenador se ha indicado dentro de su red después de una barra: PC1, PC2, … , PC20 y Proxy (para su IP 192.168.1.1) tienen la máscara 255.255.255.0 y Router, Web, Correo y Proxy (para su IP 194.143.17.10), la máscara 255.255.255.248.</p>
+</div>
 <!-- Varias -->
 
 
