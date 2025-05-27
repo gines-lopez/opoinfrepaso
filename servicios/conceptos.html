@@ -993,11 +993,140 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#herramientas-generales" class="md-nav__link">
+  <a href="#casos-practicos-resolucion-paso-a-paso" class="md-nav__link">
     <span class="md-ellipsis">
-      Herramientas Generales
+      Casos Prácticos: Resolución Paso a Paso
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Casos Prácticos: Resolución Paso a Paso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caso-1-un-cliente-no-recibe-ip-dhcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caso 1: Un cliente no recibe IP (DHCP)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caso-2-no-resuelven-los-dominios-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caso 2: No resuelven los dominios (DNS)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caso-3-el-sitio-web-no-carga-apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caso 3: El sitio web no carga (Apache)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caso-4-error-de-inicio-de-sesion-por-ldap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caso 4: Error de inicio de sesión por LDAP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#caso-5-conexion-ssh-denegada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caso 5: Conexión SSH denegada
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplos-de-configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplos de Configuración
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplos de Configuración">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dhcp-etcdhcpdhcpdconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      DHCP - /etc/dhcp/dhcpd.conf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns-bind-etcbindnamedconflocal" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS (BIND) - /etc/bind/named.conf.local
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apache-etcapache2sites-availablemisitioconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apache - /etc/apache2/sites-available/misitio.conf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ldap-etcldapldapconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      LDAP - /etc/ldap/ldap.conf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-etcsshsshd_config" class="md-nav__link">
+    <span class="md-ellipsis">
+      SSH - /etc/ssh/sshd_config
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postfix-etcpostfixmaincf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Postfix - /etc/postfix/main.cf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dovecot-etcdovecotdovecotconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dovecot - /etc/dovecot/dovecot.conf
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1613,200 +1742,286 @@ Ejemplo básico:
 <li>Error de autenticación: revisar <code>/var/log/mail.log</code></li>
 <li>Servicio no iniciado: <code>systemctl status postfix</code> y <code>systemctl status dovecot</code></li>
 </ul>
-<hr />
-<h2 id="herramientas-generales">Herramientas Generales<a class="headerlink" href="#herramientas-generales" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos="1 "></span>netstat<span class="w"> </span>-tuln<span class="w">                 </span><span class="c1"># Ver puertos abiertos</span>
-</span><span id="__span-9-2"><span class="linenos" data-linenos="2 "></span>nmap<span class="w"> </span>-sT<span class="w"> </span>-p-<span class="w"> </span>localhost<span class="w">        </span><span class="c1"># Escaneo completo de puertos</span>
-</span><span id="__span-9-3"><span class="linenos" data-linenos="3 "></span>tcpdump<span class="w"> </span>-i<span class="w"> </span>interfaz<span class="w"> </span>port<span class="w"> </span><span class="m">53</span><span class="w">   </span><span class="c1"># Analizar tráfico DNS</span>
-</span><span id="__span-9-4"><span class="linenos" data-linenos="4 "></span>tcpdump<span class="w"> </span>port<span class="w"> </span><span class="m">67</span><span class="w"> </span>or<span class="w"> </span><span class="m">68</span><span class="w">         </span><span class="c1"># Ver solicitudes DHCP</span>
-</span></code></pre></div>
-<hr />
-<h1 id="casos-practicos-resolucion-paso-a-paso">Casos Prácticos: Resolución Paso a Paso<a class="headerlink" href="#casos-practicos-resolucion-paso-a-paso" title="Permanent link">&para;</a></h1>
-<h2 id="caso-1-un-cliente-no-recibe-ip-dhcp">Caso 1: Un cliente no recibe IP (DHCP)<a class="headerlink" href="#caso-1-un-cliente-no-recibe-ip-dhcp" title="Permanent link">&para;</a></h2>
-<h3 id="diagnostico">Diagnóstico<a class="headerlink" href="#diagnostico" title="Permanent link">&para;</a></h3>
+<h2 id="casos-practicos-resolucion-paso-a-paso">Casos Prácticos: Resolución Paso a Paso<a class="headerlink" href="#casos-practicos-resolucion-paso-a-paso" title="Permanent link">&para;</a></h2>
+<h3 id="caso-1-un-cliente-no-recibe-ip-dhcp">Caso 1: Un cliente no recibe IP (DHCP)<a class="headerlink" href="#caso-1-un-cliente-no-recibe-ip-dhcp" title="Permanent link">&para;</a></h3>
+<h4 id="diagnostico">Diagnóstico<a class="headerlink" href="#diagnostico" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Verificar si el cliente está conectado correctamente.</li>
 <li>Comprobar si hay una IP asignada:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><span class="linenos" data-linenos="1 "></span>ip<span class="w"> </span>a
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><span class="linenos" data-linenos="1 "></span>ip<span class="w"> </span>a
 </span></code></pre></div></li>
 <li>Intentar renovar la IP:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><span class="linenos" data-linenos="1 "></span>dhclient<span class="w"> </span>-v
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><span class="linenos" data-linenos="1 "></span>dhclient<span class="w"> </span>-v
 </span></code></pre></div></li>
 <li>Revisar el estado del servidor DHCP:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><span class="linenos" data-linenos="1 "></span>systemctl<span class="w"> </span>status<span class="w"> </span>isc-dhcp-server
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><span class="linenos" data-linenos="1 "></span>systemctl<span class="w"> </span>status<span class="w"> </span>isc-dhcp-server
 </span></code></pre></div></li>
 <li>Analizar los logs para ver si la solicitud llegó:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><span class="linenos" data-linenos="1 "></span>journalctl<span class="w"> </span>-xe<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>dhcp
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><span class="linenos" data-linenos="1 "></span>journalctl<span class="w"> </span>-xe<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>dhcp
 </span></code></pre></div></li>
 </ol>
-<h3 id="solucion">Solución<a class="headerlink" href="#solucion" title="Permanent link">&para;</a></h3>
+<h4 id="solucion">Solución<a class="headerlink" href="#solucion" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Asegurarse de que el archivo <code>/etc/dhcp/dhcpd.conf</code> esté correctamente configurado.</li>
 <li>Verificar que la interfaz esté bien especificada en <code>/etc/default/isc-dhcp-server</code>.</li>
 </ul>
-<h2 id="caso-2-no-resuelven-los-dominios-dns">Caso 2: No resuelven los dominios (DNS)<a class="headerlink" href="#caso-2-no-resuelven-los-dominios-dns" title="Permanent link">&para;</a></h2>
-<h3 id="diagnostico_1">Diagnóstico<a class="headerlink" href="#diagnostico_1" title="Permanent link">&para;</a></h3>
+<h3 id="caso-2-no-resuelven-los-dominios-dns">Caso 2: No resuelven los dominios (DNS)<a class="headerlink" href="#caso-2-no-resuelven-los-dominios-dns" title="Permanent link">&para;</a></h3>
+<h4 id="diagnostico_1">Diagnóstico<a class="headerlink" href="#diagnostico_1" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Probar resolución con <code>dig</code> o <code>nslookup</code>:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><span class="linenos" data-linenos="1 "></span>dig<span class="w"> </span>google.com
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><span class="linenos" data-linenos="1 "></span>dig<span class="w"> </span>google.com
 </span></code></pre></div></li>
 <li>Comprobar contenido de <code>/etc/resolv.conf</code>.</li>
 <li>Revisar si el servicio DNS (ej. BIND9) está activo:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><span class="linenos" data-linenos="1 "></span>systemctl<span class="w"> </span>status<span class="w"> </span>bind9
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><span class="linenos" data-linenos="1 "></span>systemctl<span class="w"> </span>status<span class="w"> </span>bind9
 </span></code></pre></div></li>
 </ol>
-<h3 id="solucion_1">Solución<a class="headerlink" href="#solucion_1" title="Permanent link">&para;</a></h3>
+<h4 id="solucion_1">Solución<a class="headerlink" href="#solucion_1" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Verificar sintaxis de zonas con <code>named-checkzone</code>.</li>
 <li>Reiniciar el servicio si está caído.</li>
 <li>Asegurar que el firewall permita el puerto 53.</li>
 </ul>
-<h2 id="caso-3-el-sitio-web-no-carga-apache">Caso 3: El sitio web no carga (Apache)<a class="headerlink" href="#caso-3-el-sitio-web-no-carga-apache" title="Permanent link">&para;</a></h2>
-<h3 id="diagnostico_2">Diagnóstico<a class="headerlink" href="#diagnostico_2" title="Permanent link">&para;</a></h3>
+<h3 id="caso-3-el-sitio-web-no-carga-apache">Caso 3: El sitio web no carga (Apache)<a class="headerlink" href="#caso-3-el-sitio-web-no-carga-apache" title="Permanent link">&para;</a></h3>
+<h4 id="diagnostico_2">Diagnóstico<a class="headerlink" href="#diagnostico_2" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Probar con <code>curl</code> o navegador local:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><span class="linenos" data-linenos="1 "></span>curl<span class="w"> </span>http://localhost
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><span class="linenos" data-linenos="1 "></span>curl<span class="w"> </span>http://localhost
 </span></code></pre></div></li>
 <li>Verificar estado de Apache:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><span class="linenos" data-linenos="1 "></span>systemctl<span class="w"> </span>status<span class="w"> </span>apache2
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><span class="linenos" data-linenos="1 "></span>systemctl<span class="w"> </span>status<span class="w"> </span>apache2
 </span></code></pre></div></li>
 <li>Revisar archivos de configuración y virtual hosts:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><span class="linenos" data-linenos="1 "></span>apachectl<span class="w"> </span>-S
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><span class="linenos" data-linenos="1 "></span>apachectl<span class="w"> </span>-S
 </span></code></pre></div></li>
 </ol>
-<h3 id="solucion_2">Solución<a class="headerlink" href="#solucion_2" title="Permanent link">&para;</a></h3>
+<h4 id="solucion_2">Solución<a class="headerlink" href="#solucion_2" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Corregir errores de configuración.</li>
 <li>Verificar permisos de los archivos del sitio.</li>
 <li>Reiniciar Apache: <code>systemctl restart apache2</code>.</li>
 </ul>
-<h2 id="caso-4-error-de-inicio-de-sesion-por-ldap">Caso 4: Error de inicio de sesión por LDAP<a class="headerlink" href="#caso-4-error-de-inicio-de-sesion-por-ldap" title="Permanent link">&para;</a></h2>
-<h3 id="diagnostico_3">Diagnóstico<a class="headerlink" href="#diagnostico_3" title="Permanent link">&para;</a></h3>
+<h3 id="caso-4-error-de-inicio-de-sesion-por-ldap">Caso 4: Error de inicio de sesión por LDAP<a class="headerlink" href="#caso-4-error-de-inicio-de-sesion-por-ldap" title="Permanent link">&para;</a></h3>
+<h4 id="diagnostico_3">Diagnóstico<a class="headerlink" href="#diagnostico_3" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Probar búsqueda con <code>ldapsearch</code>.</li>
 <li>Revisar DN y credenciales usadas.</li>
 <li>Ver logs del servicio slapd.</li>
 </ol>
-<h3 id="solucion_3">Solución<a class="headerlink" href="#solucion_3" title="Permanent link">&para;</a></h3>
+<h4 id="solucion_3">Solución<a class="headerlink" href="#solucion_3" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Verificar el archivo <code>/etc/ldap/ldap.conf</code>.</li>
 <li>Corregir DN base o credenciales.</li>
 <li>Asegurar que el esquema esté correctamente cargado.</li>
 </ul>
-<h2 id="caso-5-conexion-ssh-denegada">Caso 5: Conexión SSH denegada<a class="headerlink" href="#caso-5-conexion-ssh-denegada" title="Permanent link">&para;</a></h2>
-<h3 id="diagnostico_4">Diagnóstico<a class="headerlink" href="#diagnostico_4" title="Permanent link">&para;</a></h3>
+<h3 id="caso-5-conexion-ssh-denegada">Caso 5: Conexión SSH denegada<a class="headerlink" href="#caso-5-conexion-ssh-denegada" title="Permanent link">&para;</a></h3>
+<h4 id="diagnostico_4">Diagnóstico<a class="headerlink" href="#diagnostico_4" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Probar conexión desde otro equipo:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><span class="linenos" data-linenos="1 "></span>ssh<span class="w"> </span>usuario@ip
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><span class="linenos" data-linenos="1 "></span>ssh<span class="w"> </span>usuario@ip
 </span></code></pre></div></li>
 <li>Verificar estado del servicio:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><span class="linenos" data-linenos="1 "></span>systemctl<span class="w"> </span>status<span class="w"> </span>ssh
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><span class="linenos" data-linenos="1 "></span>systemctl<span class="w"> </span>status<span class="w"> </span>ssh
 </span></code></pre></div></li>
 <li>Revisar logs:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><span class="linenos" data-linenos="1 "></span>journalctl<span class="w"> </span>-xe<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>sshd
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><span class="linenos" data-linenos="1 "></span>journalctl<span class="w"> </span>-xe<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>sshd
 </span></code></pre></div></li>
 </ol>
-<h3 id="solucion_4">Solución<a class="headerlink" href="#solucion_4" title="Permanent link">&para;</a></h3>
+<h4 id="solucion_4">Solución<a class="headerlink" href="#solucion_4" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Comprobar si el usuario está permitido (<code>AllowUsers</code>).</li>
 <li>Revisar claves públicas/privadas.</li>
 <li>Asegurar que el puerto 22 no esté bloqueado.</li>
 </ul>
-<h2 id="caso-6-correos-no-se-envian-postfix">Caso 6: Correos no se envían (Postfix)<a class="headerlink" href="#caso-6-correos-no-se-envian-postfix" title="Permanent link">&para;</a></h2>
-<h3 id="diagnostico_5">Diagnóstico<a class="headerlink" href="#diagnostico_5" title="Permanent link">&para;</a></h3>
+<h4 id="caso-6-correos-no-se-envian-postfix">Caso 6: Correos no se envían (Postfix)<a class="headerlink" href="#caso-6-correos-no-se-envian-postfix" title="Permanent link">&para;</a></h4>
+<h4 id="diagnostico_5">Diagnóstico<a class="headerlink" href="#diagnostico_5" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Revisar la cola de correo:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><span class="linenos" data-linenos="1 "></span>mailq
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><span class="linenos" data-linenos="1 "></span>mailq
 </span></code></pre></div></li>
 <li>Consultar logs:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><span class="linenos" data-linenos="1 "></span>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/mail.log
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><span class="linenos" data-linenos="1 "></span>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/mail.log
 </span></code></pre></div></li>
 <li>Verificar configuración en <code>main.cf</code>.</li>
 </ol>
-<h3 id="solucion_5">Solución<a class="headerlink" href="#solucion_5" title="Permanent link">&para;</a></h3>
+<h4 id="solucion_5">Solución<a class="headerlink" href="#solucion_5" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Corregir errores en <code>main.cf</code>.</li>
 <li>Vaciar la cola si hay errores permanentes:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><span class="linenos" data-linenos="1 "></span>postsuper<span class="w"> </span>-d<span class="w"> </span>ALL
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><span class="linenos" data-linenos="1 "></span>postsuper<span class="w"> </span>-d<span class="w"> </span>ALL
 </span></code></pre></div></li>
 <li>Reiniciar el servicio:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><span class="linenos" data-linenos="1 "></span>systemctl<span class="w"> </span>restart<span class="w"> </span>postfix
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><span class="linenos" data-linenos="1 "></span>systemctl<span class="w"> </span>restart<span class="w"> </span>postfix
 </span></code></pre></div></li>
 </ul>
 <h2 id="ejemplos-de-configuracion">Ejemplos de Configuración<a class="headerlink" href="#ejemplos-de-configuracion" title="Permanent link">&para;</a></h2>
 <h3 id="dhcp-etcdhcpdhcpdconf">DHCP - /etc/dhcp/dhcpd.conf<a class="headerlink" href="#dhcp-etcdhcpdhcpdconf" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><span class="linenos" data-linenos=" 1 "></span>default-lease-time 600;
-</span><span id="__span-26-2"><span class="linenos" data-linenos=" 2 "></span>max-lease-time 7200;
-</span><span id="__span-26-3"><span class="linenos" data-linenos=" 3 "></span>authoritative;
-</span><span id="__span-26-4"><span class="linenos" data-linenos=" 4 "></span>
-</span><span id="__span-26-5"><span class="linenos" data-linenos=" 5 "></span>subnet 192.168.10.0 netmask 255.255.255.0 {
-</span><span id="__span-26-6"><span class="linenos" data-linenos=" 6 "></span>  range 192.168.10.10 192.168.10.100;
-</span><span id="__span-26-7"><span class="linenos" data-linenos=" 7 "></span>  option routers 192.168.10.1;
-</span><span id="__span-26-8"><span class="linenos" data-linenos=" 8 "></span>  option subnet-mask 255.255.255.0;
-</span><span id="__span-26-9"><span class="linenos" data-linenos=" 9 "></span>  option domain-name-servers 8.8.8.8, 8.8.4.4;
-</span><span id="__span-26-10"><span class="linenos" data-linenos="10 "></span>  option domain-name &quot;midominio.local&quot;;
-</span><span id="__span-26-11"><span class="linenos" data-linenos="11 "></span>}
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><span class="linenos" data-linenos=" 1 "></span>default-lease-time 600;
+</span><span id="__span-25-2"><span class="linenos" data-linenos=" 2 "></span>max-lease-time 7200;
+</span><span id="__span-25-3"><span class="linenos" data-linenos=" 3 "></span>authoritative;
+</span><span id="__span-25-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-25-5"><span class="linenos" data-linenos=" 5 "></span>subnet 192.168.10.0 netmask 255.255.255.0 {
+</span><span id="__span-25-6"><span class="linenos" data-linenos=" 6 "></span>  range 192.168.10.10 192.168.10.100;
+</span><span id="__span-25-7"><span class="linenos" data-linenos=" 7 "></span>  option routers 192.168.10.1;
+</span><span id="__span-25-8"><span class="linenos" data-linenos=" 8 "></span>  option domain-name-servers 192.168.10.2;
+</span><span id="__span-25-9"><span class="linenos" data-linenos=" 9 "></span>}
+</span><span id="__span-25-10"><span class="linenos" data-linenos="10 "></span>
+</span><span id="__span-25-11"><span class="linenos" data-linenos="11 "></span>host impresora {
+</span><span id="__span-25-12"><span class="linenos" data-linenos="12 "></span>  hardware ethernet 00:11:22:33:44:55;
+</span><span id="__span-25-13"><span class="linenos" data-linenos="13 "></span>  fixed-address 192.168.10.200;
+</span><span id="__span-25-14"><span class="linenos" data-linenos="14 "></span>}
 </span></code></pre></div>
+<h4 id="comprobaciones">Comprobaciones<a class="headerlink" href="#comprobaciones" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Validar configuración:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><span class="linenos" data-linenos="1 "></span>dhcpd<span class="w"> </span>-t
+</span></code></pre></div></li>
+<li>Reiniciar servicio:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><span class="linenos" data-linenos="1 "></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>isc-dhcp-server
+</span></code></pre></div></li>
+<li>Ver concesiones:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><span class="linenos" data-linenos="1 "></span>cat<span class="w"> </span>/var/lib/dhcp/dhcpd.leases
+</span></code></pre></div></li>
+</ul>
 <h3 id="dns-bind-etcbindnamedconflocal">DNS (BIND) - /etc/bind/named.conf.local<a class="headerlink" href="#dns-bind-etcbindnamedconflocal" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><span class="linenos" data-linenos="1 "></span>zone &quot;midominio.local&quot; {
-</span><span id="__span-27-2"><span class="linenos" data-linenos="2 "></span>    type master;
-</span><span id="__span-27-3"><span class="linenos" data-linenos="3 "></span>    file &quot;/etc/bind/db.midominio.local&quot;;
-</span><span id="__span-27-4"><span class="linenos" data-linenos="4 "></span>};
+<h4 id="archivos-importantes">Archivos importantes<a class="headerlink" href="#archivos-importantes" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>/etc/bind/named.conf</code></li>
+<li><code>/etc/bind/named.conf.options</code></li>
+<li><code>/etc/bind/named.conf.local</code></li>
+<li><code>/var/cache/bind/</code> (zonas en caché)</li>
+</ul>
+<h4 id="configuracion-tipica">Configuración típica<a class="headerlink" href="#configuracion-tipica" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><span class="linenos" data-linenos=" 1 "></span>acl &quot;redlocal&quot; {
+</span><span id="__span-29-2"><span class="linenos" data-linenos=" 2 "></span>  192.168.10.0/24;
+</span><span id="__span-29-3"><span class="linenos" data-linenos=" 3 "></span>};
+</span><span id="__span-29-4"><span class="linenos" data-linenos=" 4 "></span>
+</span><span id="__span-29-5"><span class="linenos" data-linenos=" 5 "></span>options {
+</span><span id="__span-29-6"><span class="linenos" data-linenos=" 6 "></span>  directory &quot;/var/cache/bind&quot;;
+</span><span id="__span-29-7"><span class="linenos" data-linenos=" 7 "></span>  recursion yes;
+</span><span id="__span-29-8"><span class="linenos" data-linenos=" 8 "></span>  allow-recursion { redlocal; };
+</span><span id="__span-29-9"><span class="linenos" data-linenos=" 9 "></span>  listen-on port 53 { 127.0.0.1; 192.168.10.2; };
+</span><span id="__span-29-10"><span class="linenos" data-linenos="10 "></span>  forwarders {
+</span><span id="__span-29-11"><span class="linenos" data-linenos="11 "></span>    8.8.8.8;
+</span><span id="__span-29-12"><span class="linenos" data-linenos="12 "></span>    1.1.1.1;
+</span><span id="__span-29-13"><span class="linenos" data-linenos="13 "></span>  };
+</span><span id="__span-29-14"><span class="linenos" data-linenos="14 "></span>};
+</span></code></pre></div>
+<h4 id="zona-directa-namedconflocal">Zona directa - named.conf.local<a class="headerlink" href="#zona-directa-namedconflocal" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><span class="linenos" data-linenos="1 "></span>zone &quot;midominio.local&quot; {
+</span><span id="__span-30-2"><span class="linenos" data-linenos="2 "></span>    type master;
+</span><span id="__span-30-3"><span class="linenos" data-linenos="3 "></span>    file &quot;/etc/bind/db.midominio.local&quot;;
+</span><span id="__span-30-4"><span class="linenos" data-linenos="4 "></span>};
+</span></code></pre></div>
+<h4 id="zona-inversa">Zona inversa<a class="headerlink" href="#zona-inversa" title="Permanent link">&para;</a></h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><span class="linenos" data-linenos="1 "></span>zone &quot;10.168.192.in-addr.arpa&quot; {
+</span><span id="__span-31-2"><span class="linenos" data-linenos="2 "></span>    type master;
+</span><span id="__span-31-3"><span class="linenos" data-linenos="3 "></span>    file &quot;/etc/bind/db.192&quot;;
+</span><span id="__span-31-4"><span class="linenos" data-linenos="4 "></span>};
 </span></code></pre></div>
 <h4 id="etcbinddbmidominiolocal">/etc/bind/db.midominio.local<a class="headerlink" href="#etcbinddbmidominiolocal" title="Permanent link">&para;</a></h4>
-<div class="language-zone highlight"><pre><span></span><code><span id="__span-28-1"><span class="linenos" data-linenos=" 1 "></span><span class="k">$TTL</span><span class="w">    </span><span class="mi">604800</span>
-</span><span id="__span-28-2"><span class="linenos" data-linenos=" 2 "></span><span class="o">@</span><span class="w">       </span><span class="nc">IN</span><span class="w">      </span><span class="kt">SOA</span><span class="w">     </span><span class="l">ns1.midominio.local.</span><span class="w"> </span><span class="l">admin.midominio.local.</span><span class="w"> </span><span class="p">(</span>
-</span><span id="__span-28-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">                              </span><span class="mi">2</span><span class="w">         </span><span class="c1">; Serial</span>
-</span><span id="__span-28-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">                         </span><span class="mi">604800</span><span class="w">         </span><span class="c1">; Refresh</span>
-</span><span id="__span-28-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">                          </span><span class="mi">86400</span><span class="w">         </span><span class="c1">; Retry</span>
-</span><span id="__span-28-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">                        </span><span class="mi">2419200</span><span class="w">         </span><span class="c1">; Expire</span>
-</span><span id="__span-28-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">                         </span><span class="mi">604800</span><span class="w"> </span><span class="p">)</span><span class="w">       </span><span class="c1">; Negative Cache TTL</span>
-</span><span id="__span-28-8"><span class="linenos" data-linenos=" 8 "></span><span class="c1">;</span>
-</span><span id="__span-28-9"><span class="linenos" data-linenos=" 9 "></span><span class="o">@</span><span class="w">       </span><span class="nc">IN</span><span class="w">      </span><span class="kt">NS</span><span class="w">      </span><span class="l">ns1.midominio.local.</span>
-</span><span id="__span-28-10"><span class="linenos" data-linenos="10 "></span><span class="n">ns1</span><span class="w">     </span><span class="nc">IN</span><span class="w">      </span><span class="kt">A</span><span class="w">       </span><span class="l">192.168.10.2</span>
-</span><span id="__span-28-11"><span class="linenos" data-linenos="11 "></span><span class="n">www</span><span class="w">     </span><span class="nc">IN</span><span class="w">      </span><span class="kt">A</span><span class="w">       </span><span class="l">192.168.10.3</span>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><span class="linenos" data-linenos="1 "></span>zone &quot;midominio.local&quot; {
+</span><span id="__span-32-2"><span class="linenos" data-linenos="2 "></span>    type master;
+</span><span id="__span-32-3"><span class="linenos" data-linenos="3 "></span>    file &quot;/etc/bind/db.midominio.local&quot;;
+</span><span id="__span-32-4"><span class="linenos" data-linenos="4 "></span>};
+</span></code></pre></div>
+<div class="language-zone highlight"><pre><span></span><code><span id="__span-33-1"><span class="linenos" data-linenos=" 1 "></span><span class="k">$TTL</span><span class="w">    </span><span class="mi">604800</span>
+</span><span id="__span-33-2"><span class="linenos" data-linenos=" 2 "></span><span class="o">@</span><span class="w">       </span><span class="nc">IN</span><span class="w">      </span><span class="kt">SOA</span><span class="w">     </span><span class="l">ns1.midominio.local.</span><span class="w"> </span><span class="l">admin.midominio.local.</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-33-3"><span class="linenos" data-linenos=" 3 "></span><span class="w">                              </span><span class="mi">2</span><span class="w">         </span><span class="c1">; Serial</span>
+</span><span id="__span-33-4"><span class="linenos" data-linenos=" 4 "></span><span class="w">                         </span><span class="mi">604800</span><span class="w">         </span><span class="c1">; Refresh</span>
+</span><span id="__span-33-5"><span class="linenos" data-linenos=" 5 "></span><span class="w">                          </span><span class="mi">86400</span><span class="w">         </span><span class="c1">; Retry</span>
+</span><span id="__span-33-6"><span class="linenos" data-linenos=" 6 "></span><span class="w">                        </span><span class="mi">2419200</span><span class="w">         </span><span class="c1">; Expire</span>
+</span><span id="__span-33-7"><span class="linenos" data-linenos=" 7 "></span><span class="w">                         </span><span class="mi">604800</span><span class="w"> </span><span class="p">)</span><span class="w">       </span><span class="c1">; Negative Cache TTL</span>
+</span><span id="__span-33-8"><span class="linenos" data-linenos=" 8 "></span><span class="c1">;</span>
+</span><span id="__span-33-9"><span class="linenos" data-linenos=" 9 "></span><span class="o">@</span><span class="w">       </span><span class="nc">IN</span><span class="w">      </span><span class="kt">NS</span><span class="w">      </span><span class="l">ns1.midominio.local.</span>
+</span><span id="__span-33-10"><span class="linenos" data-linenos="10 "></span><span class="n">ns1</span><span class="w">     </span><span class="nc">IN</span><span class="w">      </span><span class="kt">A</span><span class="w">       </span><span class="l">192.168.10.2</span>
+</span><span id="__span-33-11"><span class="linenos" data-linenos="11 "></span><span class="n">www</span><span class="w">     </span><span class="nc">IN</span><span class="w">      </span><span class="kt">A</span><span class="w">       </span><span class="l">192.168.10.3</span>
 </span></code></pre></div>
 <h3 id="apache-etcapache2sites-availablemisitioconf">Apache - /etc/apache2/sites-available/misitio.conf<a class="headerlink" href="#apache-etcapache2sites-availablemisitioconf" title="Permanent link">&para;</a></h3>
-<div class="language-apache highlight"><pre><span></span><code><span id="__span-29-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="s">*:80</span><span class="nt">&gt;</span>
-</span><span id="__span-29-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="nb">ServerAdmin</span><span class="w"> </span>webmaster@localhost
-</span><span id="__span-29-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="nb">ServerName</span><span class="w"> </span>midominio.local
-</span><span id="__span-29-4"><span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="nb">DocumentRoot</span><span class="w"> </span><span class="sx">/var/www/misitio</span>
-</span><span id="__span-29-5"><span class="linenos" data-linenos="5 "></span>
-</span><span id="__span-29-6"><span class="linenos" data-linenos="6 "></span><span class="w">    </span><span class="nb">ErrorLog</span><span class="w"> </span>${APACHE_LOG_DIR}/error.log
-</span><span id="__span-29-7"><span class="linenos" data-linenos="7 "></span><span class="w">    </span><span class="nb">CustomLog</span><span class="w"> </span>${APACHE_LOG_DIR}/access.log<span class="w"> </span>combined
-</span><span id="__span-29-8"><span class="linenos" data-linenos="8 "></span><span class="nt">&lt;/VirtualHost&gt;</span>
+<h4 id="activar-apache">Activar Apache<a class="headerlink" href="#activar-apache" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-34-1"><span class="linenos" data-linenos="1 "></span>apt-get<span class="w"> </span>install<span class="w"> </span>apache2
 </span></code></pre></div>
-<h4 id="activar-el-sitio">Activar el sitio<a class="headerlink" href="#activar-el-sitio" title="Permanent link">&para;</a></h4>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-30-1"><span class="linenos" data-linenos="1 "></span>a2ensite<span class="w"> </span>misitio.conf
-</span><span id="__span-30-2"><span class="linenos" data-linenos="2 "></span>systemctl<span class="w"> </span>reload<span class="w"> </span>apache2
+<h4 id="ficheros-de-configuracion">Ficheros de configuración<a class="headerlink" href="#ficheros-de-configuracion" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>/etc/apache2/apache2.conf</code></li>
+<li><code>/etc/apache2/sites-available/</code></li>
+</ul>
+<h4 id="crear-sitios">Crear sitios<a class="headerlink" href="#crear-sitios" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-35-1"><span class="linenos" data-linenos="1 "></span><span class="nb">cd</span><span class="w"> </span>/etc/apache2/sites-available
+</span><span id="__span-35-2"><span class="linenos" data-linenos="2 "></span>cp<span class="w"> </span><span class="m">000</span>-default.conf<span class="w"> </span>iesgn.conf
+</span><span id="__span-35-3"><span class="linenos" data-linenos="3 "></span>cp<span class="w"> </span><span class="m">000</span>-default.conf<span class="w"> </span>departamentos.conf
+</span></code></pre></div>
+<h4 id="ejemplo-de-virtualhost">Ejemplo de VirtualHost<a class="headerlink" href="#ejemplo-de-virtualhost" title="Permanent link">&para;</a></h4>
+<p><strong>iesgn.conf</strong>
+<div class="language-apache highlight"><pre><span></span><code><span id="__span-36-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="s">*:80</span><span class="nt">&gt;</span>
+</span><span id="__span-36-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="nb">ServerName</span><span class="w"> </span>www.iesgn.org
+</span><span id="__span-36-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="nb">DocumentRoot</span><span class="w"> </span><span class="sx">/var/www/iesgn</span>
+</span><span id="__span-36-4"><span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="nb">ErrorLog</span><span class="w"> </span>${APACHE_LOG_DIR}/iesgn_error.log
+</span><span id="__span-36-5"><span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="nb">CustomLog</span><span class="w"> </span>${APACHE_LOG_DIR}/iesgn_access.log<span class="w"> </span>combined
+</span><span id="__span-36-6"><span class="linenos" data-linenos="6 "></span><span class="nt">&lt;/VirtualHost&gt;</span>
+</span></code></pre></div></p>
+<p><strong>departamentos.conf</strong>
+<div class="language-apache highlight"><pre><span></span><code><span id="__span-37-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;VirtualHost</span><span class="w"> </span><span class="s">*:80</span><span class="nt">&gt;</span>
+</span><span id="__span-37-2"><span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="nb">ServerName</span><span class="w"> </span>www.departamentosgn.org
+</span><span id="__span-37-3"><span class="linenos" data-linenos="3 "></span><span class="w">    </span><span class="nb">DocumentRoot</span><span class="w"> </span><span class="sx">/var/www/departamentos</span>
+</span><span id="__span-37-4"><span class="linenos" data-linenos="4 "></span><span class="w">    </span><span class="nb">ErrorLog</span><span class="w"> </span>${APACHE_LOG_DIR}/dept_error.log
+</span><span id="__span-37-5"><span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="nb">CustomLog</span><span class="w"> </span>${APACHE_LOG_DIR}/dept_access.log<span class="w"> </span>combined
+</span><span id="__span-37-6"><span class="linenos" data-linenos="6 "></span><span class="nt">&lt;/VirtualHost&gt;</span>
+</span></code></pre></div></p>
+<h4 id="habilitar-sitios">Habilitar sitios<a class="headerlink" href="#habilitar-sitios" title="Permanent link">&para;</a></h4>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-38-1"><span class="linenos" data-linenos="1 "></span>a2ensite<span class="w"> </span>iesgn
+</span><span id="__span-38-2"><span class="linenos" data-linenos="2 "></span>a2ensite<span class="w"> </span>departamentos
+</span><span id="__span-38-3"><span class="linenos" data-linenos="3 "></span>systemctl<span class="w"> </span>reload<span class="w"> </span>apache2
+</span></code></pre></div>
+<h4 id="autenticacion-en-apache">Autenticación en Apache<a class="headerlink" href="#autenticacion-en-apache" title="Permanent link">&para;</a></h4>
+<h5 id="autenticacion-basica">Autenticación básica<a class="headerlink" href="#autenticacion-basica" title="Permanent link">&para;</a></h5>
+<div class="language-apache highlight"><pre><span></span><code><span id="__span-39-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;Directory</span><span class="w"> </span><span class="s">&quot;/var/www/miweb/privado&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-39-2"><span class="linenos" data-linenos="2 "></span><span class="w">  </span><span class="nb">AuthUserFile</span><span class="w"> </span><span class="s2">&quot;/etc/apache2/claves/passwd.txt&quot;</span>
+</span><span id="__span-39-3"><span class="linenos" data-linenos="3 "></span><span class="w">  </span><span class="nb">AuthName</span><span class="w"> </span><span class="s2">&quot;Palabra de paso&quot;</span>
+</span><span id="__span-39-4"><span class="linenos" data-linenos="4 "></span><span class="w">  </span><span class="nb">AuthType</span><span class="w"> </span>Basic
+</span><span id="__span-39-5"><span class="linenos" data-linenos="5 "></span><span class="w">  </span><span class="nb">Require</span><span class="w"> </span>valid-user
+</span><span id="__span-39-6"><span class="linenos" data-linenos="6 "></span><span class="nt">&lt;/Directory&gt;</span>
+</span></code></pre></div>
+<h5 id="crear-archivo-de-contrasenas">Crear archivo de contraseñas<a class="headerlink" href="#crear-archivo-de-contrasenas" title="Permanent link">&para;</a></h5>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-40-1"><span class="linenos" data-linenos="1 "></span>htpasswd<span class="w"> </span>-c<span class="w"> </span>/etc/apache2/claves/passwd.txt<span class="w"> </span>usuario1
+</span></code></pre></div>
+<h5 id="autenticacion-digest">Autenticación digest<a class="headerlink" href="#autenticacion-digest" title="Permanent link">&para;</a></h5>
+<div class="language-apache highlight"><pre><span></span><code><span id="__span-41-1"><span class="linenos" data-linenos="1 "></span><span class="nt">&lt;Directory</span><span class="w"> </span><span class="s">&quot;/var/www/miweb/privado&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-41-2"><span class="linenos" data-linenos="2 "></span><span class="w">  </span><span class="nb">AuthType</span><span class="w"> </span>Digest
+</span><span id="__span-41-3"><span class="linenos" data-linenos="3 "></span><span class="w">  </span><span class="nb">AuthName</span><span class="w"> </span><span class="s2">&quot;dominio&quot;</span>
+</span><span id="__span-41-4"><span class="linenos" data-linenos="4 "></span><span class="w">  </span><span class="nb">AuthUserFile</span><span class="w"> </span><span class="s2">&quot;/etc/claves/digest.txt&quot;</span>
+</span><span id="__span-41-5"><span class="linenos" data-linenos="5 "></span><span class="w">  </span><span class="nb">Require</span><span class="w"> </span>valid-user
+</span><span id="__span-41-6"><span class="linenos" data-linenos="6 "></span><span class="nt">&lt;/Directory&gt;</span>
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-42-1"><span class="linenos" data-linenos="1 "></span>htdigest<span class="w"> </span>-c<span class="w"> </span>/etc/claves/digest.txt<span class="w"> </span>dominio<span class="w"> </span>usuario1
 </span></code></pre></div>
 <h3 id="ldap-etcldapldapconf">LDAP - /etc/ldap/ldap.conf<a class="headerlink" href="#ldap-etcldapldapconf" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-31-1"><span class="linenos" data-linenos="1 "></span>BASE    dc=midominio,dc=local
-</span><span id="__span-31-2"><span class="linenos" data-linenos="2 "></span>URI     ldap://localhost
-</span><span id="__span-31-3"><span class="linenos" data-linenos="3 "></span>TLS_REQCERT allow
+<div class="language-text highlight"><pre><span></span><code><span id="__span-43-1"><span class="linenos" data-linenos="1 "></span>BASE    dc=midominio,dc=local
+</span><span id="__span-43-2"><span class="linenos" data-linenos="2 "></span>URI     ldap://localhost
+</span><span id="__span-43-3"><span class="linenos" data-linenos="3 "></span>TLS_REQCERT allow
 </span></code></pre></div>
 <h3 id="ssh-etcsshsshd_config">SSH - /etc/ssh/sshd_config<a class="headerlink" href="#ssh-etcsshsshd_config" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><span class="linenos" data-linenos="1 "></span>Port 22
-</span><span id="__span-32-2"><span class="linenos" data-linenos="2 "></span>PermitRootLogin no
-</span><span id="__span-32-3"><span class="linenos" data-linenos="3 "></span>PasswordAuthentication yes
-</span><span id="__span-32-4"><span class="linenos" data-linenos="4 "></span>AllowUsers usuario1 usuario2
+<div class="language-text highlight"><pre><span></span><code><span id="__span-44-1"><span class="linenos" data-linenos="1 "></span>Port 22
+</span><span id="__span-44-2"><span class="linenos" data-linenos="2 "></span>PermitRootLogin no
+</span><span id="__span-44-3"><span class="linenos" data-linenos="3 "></span>PasswordAuthentication yes
+</span><span id="__span-44-4"><span class="linenos" data-linenos="4 "></span>AllowUsers usuario1 usuario2
 </span></code></pre></div>
 <h3 id="postfix-etcpostfixmaincf">Postfix - /etc/postfix/main.cf<a class="headerlink" href="#postfix-etcpostfixmaincf" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><span class="linenos" data-linenos="1 "></span>myhostname = mail.midominio.local
-</span><span id="__span-33-2"><span class="linenos" data-linenos="2 "></span>myorigin = /etc/mailname
-</span><span id="__span-33-3"><span class="linenos" data-linenos="3 "></span>mydestination = $myhostname, localhost.localdomain, localhost
-</span><span id="__span-33-4"><span class="linenos" data-linenos="4 "></span>relayhost =
-</span><span id="__span-33-5"><span class="linenos" data-linenos="5 "></span>mynetworks = 127.0.0.0/8
-</span><span id="__span-33-6"><span class="linenos" data-linenos="6 "></span>home_mailbox = Maildir/
-</span><span id="__span-33-7"><span class="linenos" data-linenos="7 "></span>smtpd_banner = $myhostname ESMTP $mail_name (Debian/GNU)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-45-1"><span class="linenos" data-linenos="1 "></span>myhostname = mail.midominio.local
+</span><span id="__span-45-2"><span class="linenos" data-linenos="2 "></span>myorigin = /etc/mailname
+</span><span id="__span-45-3"><span class="linenos" data-linenos="3 "></span>mydestination = $myhostname, localhost.localdomain, localhost
+</span><span id="__span-45-4"><span class="linenos" data-linenos="4 "></span>relayhost =
+</span><span id="__span-45-5"><span class="linenos" data-linenos="5 "></span>mynetworks = 127.0.0.0/8
+</span><span id="__span-45-6"><span class="linenos" data-linenos="6 "></span>home_mailbox = Maildir/
+</span><span id="__span-45-7"><span class="linenos" data-linenos="7 "></span>smtpd_banner = $myhostname ESMTP $mail_name (Debian/GNU)
 </span></code></pre></div>
 <h3 id="dovecot-etcdovecotdovecotconf">Dovecot - /etc/dovecot/dovecot.conf<a class="headerlink" href="#dovecot-etcdovecotdovecotconf" title="Permanent link">&para;</a></h3>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-34-1"><span class="linenos" data-linenos="1 "></span>protocols = imap pop3
-</span><span id="__span-34-2"><span class="linenos" data-linenos="2 "></span>mail_location = maildir:~/Maildir
-</span><span id="__span-34-3"><span class="linenos" data-linenos="3 "></span>disable_plaintext_auth = no
-</span><span id="__span-34-4"><span class="linenos" data-linenos="4 "></span>auth_mechanisms = plain login
-</span><span id="__span-34-5"><span class="linenos" data-linenos="5 "></span>!include conf.d/*.conf
-</span><span id="__span-34-6"><span class="linenos" data-linenos="6 "></span>!include_try local.conf
+<div class="language-text highlight"><pre><span></span><code><span id="__span-46-1"><span class="linenos" data-linenos="1 "></span>protocols = imap pop3
+</span><span id="__span-46-2"><span class="linenos" data-linenos="2 "></span>mail_location = maildir:~/Maildir
+</span><span id="__span-46-3"><span class="linenos" data-linenos="3 "></span>disable_plaintext_auth = no
+</span><span id="__span-46-4"><span class="linenos" data-linenos="4 "></span>auth_mechanisms = plain login
+</span><span id="__span-46-5"><span class="linenos" data-linenos="5 "></span>!include conf.d/*.conf
+</span><span id="__span-46-6"><span class="linenos" data-linenos="6 "></span>!include_try local.conf
 </span></code></pre></div>
 <!-- Varias -->
 
