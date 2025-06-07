@@ -2,62 +2,74 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://gines-lopez.github.io/opoinfrepaso/index.html</loc>
-         <lastmod>2025-05-27</lastmod>
+         <lastmod>2025-06-07</lastmod>
+    </url>
+    <url>
+         <loc>https://gines-lopez.github.io/opoinfrepaso/bbdd/chuletaSQL.html</loc>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://gines-lopez.github.io/opoinfrepaso/bbdd/conceptos.html</loc>
-         <lastmod>2025-05-27</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://gines-lopez.github.io/opoinfrepaso/bbdd/inicio.html</loc>
-         <lastmod>2025-05-27</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://gines-lopez.github.io/opoinfrepaso/includes/abbreviations.html</loc>
-         <lastmod>2025-05-27</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://gines-lopez.github.io/opoinfrepaso/includes/recomendacionesOrtografia.html</loc>
-         <lastmod>2025-05-27</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://gines-lopez.github.io/opoinfrepaso/programacion/inicio.html</loc>
-         <lastmod>2025-05-27</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://gines-lopez.github.io/opoinfrepaso/redes/conceptosbasicos.html</loc>
-         <lastmod>2025-05-27</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://gines-lopez.github.io/opoinfrepaso/redes/inicio.html</loc>
-         <lastmod>2025-05-27</lastmod>
+         <lastmod>2025-06-07</lastmod>
+    </url>
+    <url>
+         <loc>https://gines-lopez.github.io/opoinfrepaso/redes/repaso.html</loc>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://gines-lopez.github.io/opoinfrepaso/servicios/conceptos.html</loc>
-         <lastmod>2025-05-27</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://gines-lopez.github.io/opoinfrepaso/servicios/inicio.html</loc>
-         <lastmod>2025-05-27</lastmod>
+         <lastmod>2025-06-07</lastmod>
+    </url>
+    <url>
+         <loc>https://gines-lopez.github.io/opoinfrepaso/so/conceptos.html</loc>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://gines-lopez.github.io/opoinfrepaso/so/inicio.html</loc>
-         <lastmod>2025-05-27</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://gines-lopez.github.io/opoinfrepaso/web/inicio.html</loc>
-         <lastmod>2025-05-27</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://gines-lopez.github.io/opoinfrepaso/web/js.html</loc>
-         <lastmod>2025-05-27</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://gines-lopez.github.io/opoinfrepaso/xml/conceptos.html</loc>
-         <lastmod>2025-05-27</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://gines-lopez.github.io/opoinfrepaso/xml/inicio.html</loc>
-         <lastmod>2025-05-27</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
 </urlset>
